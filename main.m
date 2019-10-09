@@ -24,8 +24,8 @@ figure,subplot(1,2,1),imshow(img1),title("imupt1 image");
 lab2 = lab1;
 
 % bilateralFilter deal with luminance channel
-%lab2(:, :, 1) = uint8(bilateralFilter(double(lab2(:, :, 1))));
-lab2(:, :, 1) = uint8(guidedfilter(double(rgb2gray(image)),double(lab2(:, :, 1)), 15*4, 10^-6) );
+lab2(:, :, 1) = uint8(bilateralFilter(double(lab2(:, :, 1))));
+%lab2(:, :, 1) = uint8(guidedfilter(double(rgb2gray(image)),double(lab2(:, :, 1)), 15*4, 10^-6) );
 
 % adaptive histogram equalization
 lab2(:, :, 1) = adapthisteq(lab2(:, :, 1));
