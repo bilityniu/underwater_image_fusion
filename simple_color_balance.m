@@ -12,17 +12,11 @@ Ravg = mean(mean(r));
 Gavg = mean(mean(g));
 Bavg = mean(mean(b));
 
-avgRGB = [Ravg, Gavg, Bavg];
-grayValue = (Ravg + Gavg + Bavg)/3;
-scaleValue = grayValue./avgRGB;
 
-% newI(:,:,1) = scaleValue(1) * r;
-% newI(:,:,2) = scaleValue(2) * g;
-% newI(:,:,3) = scaleValue(3) * b;
-% 
-% figure,imshow(newI);
+Max = max([Ravg, Gavg, Bavg]);
+ratio = [Max / Ravg, Max / Gavg, Max / Bavg];
 
-satLevel =  0.001 * scaleValue;
+satLevel =  0.005 * ratio;
 
 [m,n,p] = size(image);
 imgRGB_orig = zeros(p, m*n);

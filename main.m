@@ -107,6 +107,7 @@ B = pyramid_reconstruct(B_b);
 
 fusion = cat(3, uint8(R), uint8(G),uint8(B));
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+uciqe = UCIQE(fusion)
 
 toc;
 figure,imshow(fusion),title("fusion image");
